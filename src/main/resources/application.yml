@@ -1,0 +1,30 @@
+server:
+  port: 8080
+tipcrm:
+  swagger:
+    enable: true
+    title:
+    description:
+    url:
+    version: 1.0
+    author: neil(1051750377@qq.com)
+
+uploadfile:
+  base-dir: E://
+
+spring:
+      application:
+         name: plm2
+      datasource:
+         driverClassName: com.mysql.jdbc.Driver
+         url: jdbc:mysql://mysql.potafish.com:3408/vue-test?zeroDateTimeBehavior=convertToNull&verifyServerCertificate=false&useSSL=true&useUnicode=true&characterEncoding=utf-8
+         username: root
+         password: Neil19940908
+      jackson:
+         date-format: yyyy-MM-dd HH:mm:ss
+         time-zone: GMT+8
+      jpa:
+         show-sql: true
+         database-platform: org.hibernate.dialect.MySQL5Dialect
+         hibernate:
+           ddl-auto: update
