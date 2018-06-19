@@ -4,42 +4,33 @@
     <h1 class="page-header">{{user.id}} - {{name}}</h1>
     <Form ref="user" :model="user" :rules="formRules" style="width: 500px" :label-width="80" @submit.prevent="addUser">
       <FormItem label="姓名" prop="name">
-        <span v-if="!editable">{{user.name}}</span>
-        <Input v-else="!editable" v-model="user.name"/>
+        <Input :readonly="!editable" v-model="user.name"/>
       </FormItem>
       <FormItem label="电话" prop="phone">
-        <span v-if="!editable">{{user.phone}}</span>
-        <Input v-else="!editable" v-model="user.phone"/>
+        <Input :readonly="!editable" v-model="user.phone"/>
       </FormItem>
       <FormItem label="邮箱" prop="email">
-        <span v-if="!editable">{{user.email}}</span>
-        <Input v-else="!editable" v-model="user.email"/>
+        <Input :readonly="!editable" v-model="user.email"/>
       </FormItem>
       <FormItem label="年龄" prop="age">
-        <span v-if="!editable">{{user.age}}</span>
-        <InputNumber v-else="!editable" v-model="user.age"/>
+        <InputNumber :readonly="!editable" v-model="user.age"/>
       </FormItem>
       <FormItem label="学历" prop="level">
-        <span v-if="!editable">{{user.level}}</span>
-        <Input v-else="!editable" v-model="user.level"/>
+        <Input :readonly="!editable" v-model="user.level"/>
       </FormItem>
       <FormItem label="毕业院校" prop="school">
-        <span v-if="!editable">{{user.school}}</span>
-        <Input v-else="!editable" v-model="user.school"/>
+        <Input :readonly="!editable" v-model="user.school"/>
       </FormItem>
       <FormItem label="职业" prop="position">
-        <span v-if="!editable">{{user.name}}</span>
-        <Input v-else="!editable" v-model="user.position"/>
+        <Input :readonly="!editable" v-model="user.position"/>
       </FormItem>
       <FormItem label="公司" prop="companyId">
-        <span v-if="!editable">{{companyName}}</span>
-        <Select v-else="!editable" v-model="user.companyId">
+        <Select :readonly="!editable" v-model="user.companyId">
           <Option v-for="company in companies" :value="company.id" :key="company.id">{{ company.name }}</Option>
         </Select>
       </FormItem>
       <FormItem label="个人简介" prop="desc">
-        <span v-if="!editable">{{user.desc}}</span>
-        <Input v-else="!editable" type="textarea" v-model="user.desc"/>
+        <Input :readonly="!editable" type="textarea" v-model="user.desc"/>
       </FormItem>
       <Button type="primary" @click="edit" v-show="!editable">编辑</Button>
       <Button type="primary" @click="save" v-show="editable">保存</Button>
@@ -75,16 +66,7 @@
         saving: false
       }
     },
-    computed: {
-      companyName() {
-        for (var i in this.companies) {
-          if (this.companies[i].id == this.user.companyId) {
-            return this.companies[i].name;
-          }
-        }
-        return "";
-      }
-    },
+
     methods: {
       getCustomer(id) {
         this.loading = true;

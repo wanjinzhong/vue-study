@@ -19,7 +19,7 @@ spring:
          driverClassName: com.mysql.jdbc.Driver
          url: jdbc:mysql://mysql.potafish.com:3408/vue-test?zeroDateTimeBehavior=convertToNull&verifyServerCertificate=false&useSSL=true&useUnicode=true&characterEncoding=utf-8
          username: root
-         password: Neil19940908
+         password: 
       jackson:
          date-format: yyyy-MM-dd HH:mm:ss
          time-zone: GMT+8

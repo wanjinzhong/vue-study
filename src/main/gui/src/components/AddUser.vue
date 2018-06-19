@@ -81,14 +81,21 @@
         })
       },
       addUser() {
+        var self = this;
         this.$refs.user.validate((valid) => {
           if (valid) {
             this.saving = true;
             this.$http.post("/api/user", this.user).then(data => {
               if (data.statusText === 'OK') {
-                this.$Message.success("修改用户成功");
+                this.$Message.success({
+                  content: "添加用户成功",
+                  duration: 1.5,
+                  onClose: function () {
+                    self.$router.push("/");
+                  }
+                });
               }
-            })
+            });
           }
         });
       }

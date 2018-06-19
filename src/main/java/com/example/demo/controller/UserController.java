@@ -1,17 +1,20 @@
 package com.example.demo.controller;
 
-import com.example.demo.JsonEntity;
-import com.example.demo.ResponseHelper;
+import java.util.List;
+
 import com.example.demo.dao.entity.User;
 import com.example.demo.dao.repository.UserRepository;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Api
+@RequestMapping("api")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
